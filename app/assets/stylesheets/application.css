@@ -11,3 +11,117 @@
  *= require_self
  *= require_tree .
  */
+ html {
+    background-color: rgb(43, 43, 43);
+}
+
+img {
+    height: 200px;
+}
+
+#profile {
+    height: 130px;
+}
+
+.rubyfox {
+    color: silver;
+    font-weight: bold;
+    font-family: "Avenir Next";
+    font-size: 55px;
+    padding-left: 15px;
+    padding: 35px;
+    position: absolute;
+    top:0;
+    left: 5px;
+    text-shadow: 3px 3px 5px black;
+}
+
+h1 {
+    color: #bf0000;
+    /*padding: 20px;*/
+    font-size: 24px;
+    font-family: "Arial Black";
+ }
+
+h2 {
+    color: #bf0000;
+    /*padding: 20px;*/
+    font-size: 24px;
+    font-family: "Arial Black";
+ }
+
+form {
+    color: #bf0000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+p {
+    color: grey;
+    font-size: 24px;
+}
+
+a:link {
+    color: grey;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: grey;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bf0000;
+    background-color: transparent;
+    text-decoration: none;
+    transition: all 1.3s ease-out;
+}
+
+a:active {
+    color: #bf0000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#aa {
+    font-size: 40px;
+    color: #bf0000;
+}
+
+#bb {
+    padding-top: 100px;
+}
+
+div {
+    padding: 10px;
+}
+
+#bar {
+    position: static;
+    background-color: rgb(43, 43, 43);
+    height: 90px;
+    border-bottom: 2px solid black;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 1px 20px black;
+    text-align: right;
+    top: 30px;
+    padding-right: 20px;
+    padding-top: 5px;
+}
+
+#content {
+    text-align: center;
+}
+
+#A {
+    margin: 5px;
+}
+
+body {
+    margin: 0;
+}

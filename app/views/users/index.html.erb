@@ -18,8 +18,8 @@
         <td><%= user.user_name %></td>
         <td><%= user.description %></td>
         <td><%= image_tag(user.image_url) %></td>
-        <td><%= link_to 'Pokaż', user %></td>
-        <td><%= link_to 'Edytuj', edit_user_path(user) %></td>
+        <td><%= link_to 'Pokaż', user %></td> |
+        <td><%= link_to 'Edytuj', edit_user_path(user) %></td>|
         <td><%= link_to 'Usuń', user, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć użytkownika?' } %></td>
       </tr>
     <% end %>

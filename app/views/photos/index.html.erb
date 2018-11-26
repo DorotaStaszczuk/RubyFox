@@ -1,11 +1,9 @@
 <h1>Najnowsze zdjęcia</h1>
 
+<%= link_to 'Dodaj nowe zdjęcie', new_photo_path %>
+<br>
   <tbody>
     <% @photos.each do |photo| %>
         <p><%= link_to image_tag(photo.image_url), photo %></p>
     <% end %>
   </tbody>
-
-<br>
-
-<%= link_to 'Dodaj nowe zdjęcie', new_photo_path %>
