@@ -1,11 +1,11 @@
-<h1>Listing users</h1>
+<h1>Lista użytkowników</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Username</th>
-      <th>Description</th>
-      <th>Image url</th>
+      <th>Nazwa użytkownika</th>
+      <th>Opis</th>
+      <th>Zdjęcie profilowe</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,10 +17,10 @@
       <tr>
         <td><%= user.user_name %></td>
         <td><%= user.description %></td>
-        <td><%= user.image_url %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(user.image_url) %></td>
+        <td><%= link_to 'Pokaż', user %></td>
+        <td><%= link_to 'Edytuj', edit_user_path(user) %></td>
+        <td><%= link_to 'Usuń', user, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć użytkownika?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Dodaj nowego użytkownika', new_user_path %>
