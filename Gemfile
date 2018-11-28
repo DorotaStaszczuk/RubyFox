@@ -35,6 +35,8 @@ end
 # Use Devise for user authentication
 gem 'devise'
 
+gem 'activeadmin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
