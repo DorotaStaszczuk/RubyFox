@@ -4,8 +4,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :user_name, "Nazwa użytkownika" %><br />
+    <%= f.text_field :user_name, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label 'email' %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, unique: true %>
   </div>
 
   <div class="field">

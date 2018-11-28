@@ -7,7 +7,7 @@
 
 <p>
   <strong>Autor:</strong>
-  <%= @photo.user_id %>
+  <%= link_to @photo.user_id, user_path(@user) %>
 </p>
 
 <p>
