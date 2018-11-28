@@ -28,10 +28,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
+        format.html { redirect_to @user, notice: 'Dodano nowego użytkownika.' }
+        format.json { render action: 'Pokaż', status: :created, location: @user }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'Nowy' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +42,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Dane użytkownika zostały pomyślnie zaktualizowane.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'Edytuj' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

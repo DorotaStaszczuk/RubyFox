@@ -28,10 +28,10 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @photo }
+        format.html { redirect_to @photo, notice: 'Zdjęcie zostało dodane.' }
+        format.json { render action: 'Pokaż', status: :created, location: @photo }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'Nowe' }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +42,10 @@ class PhotosController < ApplicationController
   def update
     respond_to do |format|
       if @photo.update(photo_params)
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+        format.html { redirect_to @photo, notice: 'Zdjęcie zostało zmienione.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'Edytuj' }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
       end
     end

@@ -1,7 +1,7 @@
-<p>Hello <%= @resource.email %>!</p>
+<p>Witaj <%= @resource.email %>!</p>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p>Twoje konto zostało zablokowane z powodu zbyt dużej liczby nieudanych prób logowania.</p>
 
-<p>Click the link below to unlock your account:</p>
+<p>Kliknij na link poniżej aby odblokować konto:</p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to 'Odblokuj moje konto', unlock_url(@resource, unlock_token: @token) %></p>
