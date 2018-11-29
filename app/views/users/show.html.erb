@@ -1,12 +1,11 @@
 
-
 <p>
   <strong>Nazwa użytkownika:</strong>
   <%= @user.user_name %>
 </p>
 
 <p>
-  <strong>Zdjęcie profilowe:</strong>
+  <strong>Zdjęcie profilowe:</strong><br />
   <%= image_tag(@user.image_url) %>
 </p>
 
@@ -15,5 +14,15 @@
   <%= @user.description %>
 </p>
 
-<%= link_to 'Edytuj', edit_user_path(@user) %> |
-<%= link_to 'Cofnij', users_path %>
+<%= link_to 'Edytuj profil', edit_user_path(@user) %> |
+
+<%= link_to 'Dodaj nowe zdjęcie', new_photo_path %>
+
+<p>
+  <strong>Dodane zdjęcia:</strong><br />
+  <ul>
+    <% @user.photos.each do |photo| %>
+      <li><%= link_to image_tag(photo.image_url), photo %></li>
+    <% end %>
+  </ul>
+</p>

@@ -5,28 +5,23 @@
 
 
   <div class="field">
-    <%= f.label 'Nazwa użytkownika' %><br>
-    <%= f.text_area :user_name %>
+    <%= f.label :user_name, "Nazwa użytkownika" %><br>
+    <%= f.text_area :user_name, autofocus: true%>
   </div>
 
   <div class="field">
-    <%= f.label 'Opis' %><br>
+    <%= f.label :description, "Opis" %><br>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label 'Zdjęcie profilowe' %><br>
+    <%= f.label :image_url, "Zdjęcie profilowe" %><br>
     <%= f.text_field :image_url %>
   </div>
 
   <div class="field">
-    <%= f.label 'email' %><br />
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
     <%= f.label 'Email' %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -34,17 +29,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'Hasło' %> <br /><i>(pozostaw puste jeśli nie chcesz zmieniać hasła)</i><br />
+    <%= f.label :password, "Hasło" %> <br /><i>(pozostaw puste jeśli nie chcesz zmieniać hasła)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label 'Powtórz hasło' %><br />
+    <%= f.label :password_confirmation, "Powtórz hasło" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label 'Dotychczasowe hasło' %><br /> <i>(potrzebujemy dotychczasowego hasła aby potwierdzić zmiany)</i><br />
+    <%= f.label :current_password, "Dotychczasowe hasło" %><br /> <i>(potrzebujemy dotychczasowego hasła aby potwierdzić zmiany)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 

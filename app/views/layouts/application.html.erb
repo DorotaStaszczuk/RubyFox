@@ -17,8 +17,7 @@
       </ul>
       <p class="navbar-text pull-right">
         <% if user_signed_in? %>
-          Zalogowano jako <strong><%= current_user.email %></strong>
-          <%= link_to 'Edytuj profil', edit_user_registration_path, :class => 'navbar-link' %> |
+          Zalogowano jako <strong><%= link_to current_user.user_name, user_path(current_user) %></strong> |
           <%= link_to "Wyloguj", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
         <% else %>
           <%= link_to "Rejestracja", new_user_registration_path, :class => 'navbar-link'  %> |

@@ -7,9 +7,8 @@
 
 <p>
   <strong>Autor:</strong>
-  <%= link_to @photo.user_id, user_path(@user) %>
+  <%= @photo.user_id %><br />
 </p>
-
 <p>
   <%= image_tag(@photo.image_url) %>
 </p>
