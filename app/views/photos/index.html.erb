@@ -4,6 +4,6 @@
 <br>
   <tbody>
     <% @photos.each do |photo| %>
-        <p><%= link_to image_tag(photo.image_url), photo %></p>
+        <%= link_to image_tag(photo.image_url), photo %>
     <% end %>
   </tbody>

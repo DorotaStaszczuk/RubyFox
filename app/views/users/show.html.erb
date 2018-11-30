@@ -1,28 +1,31 @@
 
-<p>
-  <strong>Nazwa użytkownika:</strong>
-  <%= @user.user_name %>
-</p>
-
-<p>
-  <strong>Zdjęcie profilowe:</strong><br />
+<div>
   <%= image_tag(@user.image_url) %>
-</p>
+</div>
+<h2>
+  <%= @user.user_name %>
+</h2><br />
 
 <p>
-  <strong>Opis:</strong>
-  <%= @user.description %>
+  <h3><strong>Opis:</strong></h3>
+  <div id="des"><h5><%= @user.description %></h5></div>
 </p>
 
+<div id="button">
+<%= button_to "Edytuj profil", { :action => "edit" }, :method => :get %>
+<%= button_to "Dodaj nowe zdjęcie", new_photo_path(@user), :method => :get %>
+</div>
+<p>
 <%= link_to 'Edytuj profil', edit_user_path(@user) %> |
-
 <%= link_to 'Dodaj nowe zdjęcie', new_photo_path %>
+</p><br />
 
+<hr /><br />
 <p>
-  <strong>Dodane zdjęcia:</strong><br />
+  <h3><strong>Dodane zdjęcia:</strong></h3><br />
   <ul>
     <% @user.photos.each do |photo| %>
-      <li><%= link_to image_tag(photo.image_url), photo %></li>
+      <%= link_to image_tag(photo.image_url), photo %>
     <% end %>
   </ul>
 </p>
