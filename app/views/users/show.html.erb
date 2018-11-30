@@ -1,6 +1,6 @@
 
 <div>
-  <%= image_tag(@user.image_url) %>
+  <img id="img2" <%= image_tag(@user.image_url) %>
 </div>
 <h2>
   <%= @user.user_name %>
@@ -23,7 +23,7 @@
 <hr /><br />
 <p>
   <h3><strong>Dodane zdjęcia:</strong></h3><br />
-  <ul>
+  <ul id="img1">
     <% @user.photos.each do |photo| %>
       <%= link_to image_tag(photo.image_url), photo %>
     <% end %>
