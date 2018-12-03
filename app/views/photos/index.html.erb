@@ -1,10 +1,10 @@
 <h1>Najnowsze zdjęcia</h1>
 
-<%= paginate @photos %>
-
 <br>
   <tbody>
     <% @photos.each do |photo| %>
       <%= link_to image_tag(photo.image_url), photo %>
     <% end %>
-  </tbody>
+  </tbody><br />
+
+<%= paginate @photos %>
