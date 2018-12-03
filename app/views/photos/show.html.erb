@@ -10,8 +10,8 @@
 </p>
 <p>
   <img id="img3"<%= image_tag(@photo.image_url) %>
+  <%= link_to image_tag(@photo.image_url), photo_path(@photo) %>
 </p>
-
 <p>
   <h3><strong>Opis:</strong></h3>
   <h5><%= @photo.description %></h5>
