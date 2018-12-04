@@ -10,7 +10,13 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    #@photos_full_view = Photo.find(params[:id])
   end
+
+  def view
+    @photo = Photo.find(params[:id])
+  end
+
 
   # GET /photos/new
   def new

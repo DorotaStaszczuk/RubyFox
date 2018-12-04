@@ -1,11 +1,13 @@
 RubyFox::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
-  resources :photos
-  resources :users, :except => [:index, :create, :new]
   #root 'home#index'
   root 'photos#index'
+  devise_for :users
+  get '/photos/:id/full_view', to: 'photos#view', as: 'photo_full_view'
+  resources :photos
+  resources :users, :except => [:index, :create, :new]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -18,6 +20,7 @@ RubyFox::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
