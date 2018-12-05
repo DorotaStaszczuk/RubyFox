@@ -15,12 +15,16 @@
     background-color: rgb(43, 43, 43);
 }
 
-img {
-    width: 250px;
+#full, img{
+  width: auto;
+}
+
+img, #small {
+  width: 350px;
 }
 
 #profile {
-    width: 130px;
+    width: 150px;
 }
 
 .rubyfox {
