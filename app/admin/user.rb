@@ -3,9 +3,13 @@ ActiveAdmin.register User do
   index do
     selectable_column
     id_column
-    column :created_at
+
     column :user_name
+    column :profile_image do |photo|
+      image_tag photo.image_url, height: "50"
+    end
     column :email
+    column :created_at
     column :last_sign_in_at
     column :sign_in_count
 
