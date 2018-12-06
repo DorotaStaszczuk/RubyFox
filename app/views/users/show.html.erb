@@ -19,9 +19,10 @@
 <hr /><br />
 <p>
   <h3><strong>Dodane zdjęcia:</strong></h3><br />
-  <span id="small">
-    <% @user.photos.each do |photo| %>
-      <%= link_to image_tag(photo.image_url), photo %>
-    <% end %>
-  </span>
+    <section id="photos">
+      <% @user.photos.each do |photo| %>
+        <%= link_to image_tag(photo.image_url), photo %>
+      <% end %>
+    </section>
+
 </p>

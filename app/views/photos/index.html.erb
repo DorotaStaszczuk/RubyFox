@@ -1,10 +1,11 @@
 <h1>Najnowsze zdjęcia</h1>
 
-<br>
-  <p>
-    <% @photos.each do |photo| %>
-      <span id="small"><%= link_to image_tag(photo.image_url), photo %></span>
-    <% end %>
-  </p><br />
 
-<%= paginate @photos %>
+<section id="photos">
+    <% @photos.each do |photo| %>
+      <%= link_to image_tag(photo.image_url), photo %>
+    <% end %>
+</section>
+
+
+<!-- <%= paginate @photos %> -->
