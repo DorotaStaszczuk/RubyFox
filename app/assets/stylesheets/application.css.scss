@@ -23,8 +23,9 @@ img, #small {
   width: 300px;
 }
 
-#profile {
+#profile img{
     width: 150px;
+    margin: auto;
 }
 
 .rubyfox {
@@ -134,7 +135,7 @@ a:active {
 }
 
 #bb, #profile {
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 div {
@@ -176,14 +177,14 @@ body {
 
 #photos {
   /* Prevent vertical gaps */
-  line-height: 0;
+  line-height: 15px;
 
   -webkit-column-count: 5;
-  -webkit-column-gap:   0px;
+  -webkit-column-gap:   3px;
   -moz-column-count:    5;
-  -moz-column-gap:      0px;
+  -moz-column-gap:      3px;
   column-count:         5;
-  column-gap:           0px;
+  column-gap:           3px;
 }
 
 #photos img {
