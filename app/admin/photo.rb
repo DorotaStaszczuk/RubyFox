@@ -1,5 +1,19 @@
 ActiveAdmin.register Photo do
 
+  index do
+    selectable_column
+    id_column
+    column :user
+    column :title
+    column :image_url
+    column :description
+    column :technical_info
+    column :created_at
+    column :updated_at
+
+    actions
+  end
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

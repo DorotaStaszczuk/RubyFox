@@ -6,7 +6,8 @@
 
 <p>
   <h3><strong>Autor:</strong></h3>
-  <h3><%= link_to current_user.user_name, user_path(current_user) %></h3>
+
+  <h3><%= link_to @photo.user.user_name, user_path(@photo.user) %></h3>
 </p>
 
 <p>

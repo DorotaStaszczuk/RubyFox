@@ -6,11 +6,15 @@ ActiveAdmin.register_page "Dashboard" do
 
 
     panel "Recently added photos" do
-      table_for Photo.order("created_at desc").limit(5) do
+      table_for Photo.order("created_at desc").limit(10) do
         column :title do |photo|
           link_to photo.title, [:admin, photo]
         end
+        column :image do |photo|
+          image_tag photo.image_url, height: "50"
+        end
         column :image_url
+        column :user
         column :description
         column :technical_info
       end
