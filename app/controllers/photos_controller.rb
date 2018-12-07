@@ -11,6 +11,8 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     #@photos_full_view = Photo.find(params[:id])
+    @comments = @photo.comments.all
+    @comment = @photo.comments.build
   end
 
   def view
