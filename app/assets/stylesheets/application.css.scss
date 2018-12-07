@@ -13,9 +13,10 @@
  */
  html {
     background-color: rgb(43, 43, 43);
+    height: 100%;
 }
 
-#full, img{
+#full, img {
   width: auto;
 }
 
@@ -25,7 +26,9 @@ img, #small {
 
 #profile img{
     width: 150px;
+    height: 150px;
     margin: auto;
+    border-radius: 50%;
 }
 
 .rubyfox {
@@ -47,37 +50,38 @@ hr {
   background: black;
 }
 
-#circle {
- width: 120px;
- height: 120px;
- border: 3px solid #F34A53;
- border-radius: 100%;
- margin: 40px auto 0;
-}
-
 h1 {
     color: #bf0000;
-    /*padding: 20px;*/
-    font-size: 24px;
+    font-size: 26px;
     font-family: "Arial Black";
+    margin-top: 5px;
+    margin-bottom: 5px;
  }
 
 h2 {
     color: #bf0000;
-    /*padding: 20px;*/
     font-size: 24px;
     font-family: "Arial Black";
  }
 
 h3 {
   color: #808080;
-  /*padding: 20px;*/
   font-size: 18px;
   font-family: "Arial Black";
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h4 {
+  color: #808080;
 }
 
 h5 {
   color: #808080;
+  font-size: 16px;
+  font-family: "Arial";
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 th, li {
@@ -135,7 +139,11 @@ a:active {
 }
 
 #bb, #profile {
-    padding-top: 80px;
+    padding-top: 40px;
+}
+
+#full {
+  padding-bottom: 30px;
 }
 
 div {
@@ -165,17 +173,23 @@ div {
 
 #content {
     text-align: center;
+    min-height: calc(100vh - 70px);
+    padding: 40px 40px 40px 40px;
 }
 
 #footer {
-  position: static;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: rgb(43, 43, 43);
   height: 50px;
   border-top: 2px solid black;
   padding: 0;
   margin: 0;
   box-shadow: 0 1px 20px black;
-  top: 30px;
+  bottom:0;
+  width: 100%;
   text-align: center;
 }
 
@@ -185,6 +199,7 @@ div {
 
 body {
     margin: 0;
+    height: 100%;
 }
 
 #photos {
