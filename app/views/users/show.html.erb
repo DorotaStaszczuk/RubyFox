@@ -1,13 +1,21 @@
 
 <div id="profile">
-  <%= image_tag(@user.image_url) %>
+  <% unless @user.image_url.present? %>
+    <p> Brak zdjęcia profilowego</p><br />
+  <% else %>
+    <%= image_tag(@user.image_url) %>
+  <% end %>
 </div>
 
 <h1><%= @user.user_name %></h1>
 
 <p>
   <h3><strong>Opis:</strong></h3>
-  <div id="des"><h5><%= @user.description %></h5></div>
+  <% unless @user.description.present? %>
+    <p> Brak opisu </p><br />
+  <% else %>
+    <div id="des"><h5><%= @user.description %></h5></div>
+  <% end %>
 </p>
 
 <p>
@@ -18,9 +26,13 @@
 <hr /><br />
 <p>
   <h3><strong>Dodane zdjęcia:</strong></h3><br />
+  <% unless @user.photos.present? %>
+    <p> Brak zdjęć </p><br />
+  <% else %>
     <section id="photos">
       <% @user.photos.each do |photo| %>
         <%= link_to image_tag(photo.image_url), photo %>
       <% end %>
     </section>
+  <% end %>
 </p>

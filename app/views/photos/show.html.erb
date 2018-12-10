@@ -16,12 +16,20 @@
 
 <p>
   <h3><strong>Opis:</strong></h3>
-  <div id="des"><h5><%= @photo.description %></h5></div>
+  <% unless @photo.description.present? %>
+    <p> Brak opisu </p><br />
+  <% else %>
+    <div id="des"><h5><%= @photo.description %></h5></div>
+  <% end %>
 </p>
 
 <p>
   <h3><strong>Dane techniczne:</strong></h3>
-  <div id="des"><h5><%= @photo.technical_info %></h5></div>
+  <% unless @photo.technical_info.present? %>
+    <p> Brak danych technicznych </p><br />
+  <% else %>
+    <div id="des"><h5><%= @photo.technical_info %></h5></div>
+  <% end %>
 </p>
 <p>
 <%= link_to 'Edytuj', edit_photo_path(@photo) %> |
