@@ -29,13 +29,23 @@
 <%= link_to 'Cofnij', photos_path %><br />
 </p>
 
-<h3>Comments</h3>
-<% @comments.each do |comment| %>
-  <div>
-    <strong><%= comment.user_name %></strong>
-    <br>
-    <p><%= comment.body %></p>
-    <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  </div>
+<h4>Komentarze</h4>
+<% unless @comments.present? %>
+  <p> Brak komentarzy </p><br />
+<% else %>
+  <% @comments.each do |comment| %>
+
+    <div id="comment">
+      <strong><h4><%= comment.user_name %></h4></strong>
+
+      <p><%= comment.body %></p>
+      <p>
+
+        <%= link_to 'Edit', edit_comment_path(@comment), method: :edit %> |
+        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    </div><br />
+  <% end %>
 <% end %>
+<h3>Dodaj komentarz</h3><br />
 <%= render partial: 'comments/form', locals: { comment: @comment } %>

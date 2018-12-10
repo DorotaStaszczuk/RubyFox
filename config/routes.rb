@@ -1,5 +1,5 @@
 RubyFox::Application.routes.draw do
-  resources :comments
+  resources :comments, :except => []
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

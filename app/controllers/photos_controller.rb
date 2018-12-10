@@ -35,6 +35,8 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     @photo.user = current_user
 
+    respond_with Post.create(post_params.merge(user_id: current_user.id))
+
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Zdjęcie zostało dodane.' }

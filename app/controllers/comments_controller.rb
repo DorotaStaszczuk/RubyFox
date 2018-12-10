@@ -1,4 +1,9 @@
 class CommentsController < InheritedResources::Base
+  before_action :authenticate_user!
+
+  def edit
+  end
+
 
   private
 
@@ -6,4 +11,3 @@ class CommentsController < InheritedResources::Base
       params.require(:comment).permit(:user_name, :body, :photo_id)
     end
 end
-
