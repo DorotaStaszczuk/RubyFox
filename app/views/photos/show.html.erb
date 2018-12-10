@@ -32,12 +32,14 @@
   <% end %>
 </p>
 <p>
-<%= link_to 'Edytuj', edit_photo_path(@photo) %> |
-<%= link_to 'Usuń', @photo, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć to zdjęcie?' } %> |
-<%= link_to 'Cofnij', photos_path %><br />
+  <% if @photo.user == current_user %>
+    <%= link_to 'Edytuj', edit_photo_path(@photo) %> |
+    <%= link_to 'Usuń', @photo, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć to zdjęcie?' } %> |
+    <%= link_to 'Cofnij', photos_path %><br />
+  <% end %>
 </p>
 
-<h4>Komentarze</h4>
+<strong><h3>Komentarze</h3></strong>
 <% unless @comments.present? %>
   <p> Brak komentarzy </p><br />
 <% else %>
@@ -48,9 +50,10 @@
 
       <p><%= comment.body %></p>
       <p>
-
-        <%= link_to 'Edit', edit_comment_path(@comment), method: :edit %> |
-        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if comment.user == current_user %>
+          <%= link_to 'Edit', edit_comment_path(@comment), method: :edit %> |
+          <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </p>
     </div><br />
   <% end %>

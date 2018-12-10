@@ -18,10 +18,12 @@
   <% end %>
 </p>
 
-<p>
-  <%= link_to 'Edytuj profil', edit_user_path(@user) %> |
-  <%= link_to 'Dodaj nowe zdjęcie', new_photo_path %>
-</p><br />
+<% if @user == current_user %>
+  <p>
+    <%= link_to 'Edytuj profil', edit_user_path(@user) %> |
+    <%= link_to 'Dodaj nowe zdjęcie', new_photo_path %>
+  </p><br />
+<% end %>
 
 <hr /><br />
 <p>
