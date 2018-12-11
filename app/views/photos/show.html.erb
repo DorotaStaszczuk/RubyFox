@@ -39,16 +39,24 @@
   <% end %>
 </p>
 
-<strong><h3>Komentarze</h3></strong>
+<hr><br />
+<h3>Dodaj komentarz</h3><br />
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
+<strong><h3>Komentarze</h3></strong><br />
 <% unless @comments.present? %>
   <p> Brak komentarzy </p><br />
 <% else %>
-  <% @comments.each do |comment| %>
 
+  <% @comments.sort_by(&:"#{:created_at}").reverse.each do |comment| %>
+  
     <div id="comment">
-      <strong><h4><%= comment.user_name %></h4></strong>
+      <%= image_tag(comment.photo.user.image_url) %> #
 
+      <h4>
+        <strong><%= comment.photo.user.user_name %></strong> wrote <small><%= time_ago_in_words(comment.created_at) %> ago</small>
+      </h4>
       <p><%= comment.body %></p>
+
       <p>
         <% if comment.user == current_user %>
           <%= link_to 'Edit', edit_comment_path(@comment), method: :edit %> |
@@ -58,5 +66,3 @@
     </div><br />
   <% end %>
 <% end %>
-<h3>Dodaj komentarz</h3><br />
-<%= render partial: 'comments/form', locals: { comment: @comment } %>
