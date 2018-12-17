@@ -6,3 +6,8 @@ Project is created with:
 * Rails
 * HTML
 * CSS
+
+Gems used:
+* Active Admin
+* Kaminari
+* Devise
